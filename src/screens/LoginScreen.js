@@ -25,24 +25,10 @@ class LoginScreen extends React.Component {
   // eslint-disable-next-line
   handleSubmit() {
     firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-      .then((user) => {
-        console.log('success', user);
-
+      .then(() => {
         this.resetTo('Home');
-
-        // const resetAction = NavigationActions.reset({
-        //   index: 0,
-        //   key: null,
-        //   actions: [
-        //     NavigationActions.navigate({
-        //       routeName: 'Home'
-        //     }),
-        //   ],
-        // });
-        // this.props.navigation.dispatch(resetAction);
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
       });
   }
 

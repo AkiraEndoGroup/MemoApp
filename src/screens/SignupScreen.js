@@ -24,8 +24,7 @@ class SignupScreen extends React.Component {
       .then(() => {
         this.resetTo('Home');
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
       });
   }
 
