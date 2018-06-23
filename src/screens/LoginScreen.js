@@ -5,8 +5,8 @@ import firebase from 'firebase';
 
 class LoginScreen extends React.Component {
   state = {
-    email: 'user1@gmail.com',
-    password: 'testtest',
+    email: '',
+    password: '',
   }
 
   resetTo(route) {
