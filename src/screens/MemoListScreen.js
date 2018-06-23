@@ -22,7 +22,7 @@ class MemoListScreen extends React.Component {
         this.setState({ memoList });
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       });
   }
 
