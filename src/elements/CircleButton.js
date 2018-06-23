@@ -26,7 +26,7 @@ class CircleButton extends React.Component {
     }
 
     return (
-      <TouchableHighlight style={[styles.container, style]} onPress={onPress}>
+      <TouchableHighlight style={[styles.container, style]} onPress={onPress} underlayColor="#fff">
         <View style={[styles.circleButton, style, { backgroundColor: bgColor }]}>
           {
             this.state.fontLoaded ? (
@@ -43,8 +43,6 @@ class CircleButton extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    width: 48,
-    height: 48,
     position: 'absolute',
     bottom: 24,
     right: 24,
@@ -52,6 +50,7 @@ const styles = StyleSheet.create({
   circleButton: {
     width: 48,
     height: 48,
+    margin: 8,
     borderRadius: 24,
     justifyContent: 'center',
     alignItems: 'center',
@@ -59,6 +58,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 3,
+    elevation: 4,
   },
   circleButtonTitle: {
     fontFamily: 'FontAwesome',

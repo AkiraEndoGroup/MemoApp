@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   memoBody: {
-    lineHeight: 20,
+    lineHeight: 22,
     fontSize: 15,
   },
   memoContent: {
@@ -83,11 +83,11 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     paddingBottom: 20,
-    backgroundColor: '#ddd',
+    backgroundColor: '#fff',
     flex: 1,
   },
   editButton: {
-    top: 38,
+    top: 34,
   },
 });
 
