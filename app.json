@@ -6,7 +6,7 @@
     "privacy": "unlisted",
     "sdkVersion": "28.0.0",
     "platforms": ["ios", "android"],
-    "version": "1.0.1",
+    "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -26,6 +26,7 @@
     },
     "android": {
       "package": "jp.sharemo.pro",
+      "versionCode": 2,
       "permissions": [
         "CAMERA",
         "READ_CONTACTS",
