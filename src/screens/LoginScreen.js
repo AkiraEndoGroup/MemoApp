@@ -2,14 +2,28 @@ import React from 'react';
 import { StyleSheet, View, TextInput, Text, TouchableHighlight, TouchableOpacity } from 'react-native';
 import { StackActions, NavigationActions } from 'react-navigation';
 import firebase from 'firebase';
+import Expo from 'expo';
+
+import Loading from '../elements/Loading';
 
 class LoginScreen extends React.Component {
   state = {
     email: '',
     password: '',
+    isLoading: true,
   }
 
-  resetTo(route) {
+  async componentDidMount() {
+    const email = await Expo.SecureStore.getItemAsync('email');
+    const password = await Expo.SecureStore.getItemAsync('password');
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .then(() => {
+        this.setState({ isLoading: false });
+        this.navigateTo('Home');
+      });
+  }
+
+  navigateTo(route) {
     const actionToDispatch = StackActions.reset({
       index: 0,
       key: null,
@@ -26,7 +40,9 @@ class LoginScreen extends React.Component {
   handleSubmit() {
     firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
       .then(() => {
-        this.resetTo('Home');
+        Expo.SecureStore.setItemAsync('email', this.state.email);
+        Expo.SecureStore.setItemAsync('password', this.state.password);
+        this.navigateTo('Home');
       })
       .catch(() => {
       });
@@ -35,6 +51,7 @@ class LoginScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <Loading text="ログイン中" isLoading={this.state.isLoading} />
         <Text style={styles.text}>
           ログイン
         </Text>
