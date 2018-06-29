@@ -30,7 +30,7 @@ const App = createStackNavigator({
   MemoCreate: { screen: MemoCreateScreen },
 }, {
   navigationOptions: {
-    headerTitle: 'Sharemo',
+    headerTitle: 'Kantanote',
     headerTintColor: '#fff',
     headerBackTitle: null,
     headerStyle: {

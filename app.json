@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Sharemo",
+    "name": "Kantanote",
     "description": "This project is really great.",
     "slug": "MemoApp",
     "privacy": "unlisted",
@@ -22,17 +22,11 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.sharemo.pro"
+      "bundleIdentifier": "com.aendo.kantanote"
     },
     "android": {
-      "package": "jp.sharemo.pro",
-      "versionCode": 2,
-      "permissions": [
-        "CAMERA",
-        "READ_CONTACTS",
-        "READ_PHONE_STATE",
-        "RECORD_AUDIO"
-      ],
+      "package": "com.aendo.kantanote",
+      "versionCode": 3
     }
   }
 }

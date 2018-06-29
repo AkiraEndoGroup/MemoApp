@@ -23,8 +23,7 @@ class LoginScreen extends React.Component {
           this.setState({ isLoading: false });
           this.navigateTo('Home');
         })
-        .catch((error) => {
-          console.log(error);
+        .catch(() => {
         });
     } else {
       this.setState({ isLoading: false });
